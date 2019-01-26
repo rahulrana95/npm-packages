@@ -2,7 +2,7 @@ const wfetch = require("whatwg-fetch");
 
 /**
  *
- * @param {Object} obj object
+ * @param {Object} obj object.
  * @param {String} obj.url url to send request
  * @param {Object} obj.body body for post method
  * @param {Object} query queries for url
