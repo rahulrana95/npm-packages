@@ -4,13 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rahulrana95/fetch": "^1.0.0",
-    "eslint": "^5.12.1"
-  }
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@rahulrana95/fetch": "latest",
+    "eslint": "^5.12.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-jest": "^24.0.0",
+    "jest": "^24.0.0"
+  },
+  "jest": {}
 }
