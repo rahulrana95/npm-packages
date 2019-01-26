@@ -1,4 +1,5 @@
 const wfetch = require("whatwg-fetch");
+
 /**
  *
  * @param {Object} obj object
@@ -14,12 +15,15 @@ const Fetch = {
     ACCEPT: "application/json",
     CONTENT_TYPE: "application/json"
   },
-  METHOD: "get"
+  METHOD: "GET"
 };
 
-function fetch(obj) {
+function fetchMethod(obj) {
   if (!obj.url) {
-    return {};
+    return {
+      error: true,
+      message: "url is not defined"
+    };
   }
 
   const url = new window.URL(obj.url);
@@ -39,13 +43,7 @@ function fetch(obj) {
     }
   }
 
-  obj.headers = Object.assign(
-    {
-      Accept: Fetch.HEADERS.ACCEPT,
-      "Content-Type": Fetch.HEADERS.CONTENT_TYPE
-    },
-    obj.headers
-  );
+  obj.headers = Object.assign({}, obj.headers);
 
   let fetchWork = "";
 
@@ -58,4 +56,4 @@ function fetch(obj) {
   return fetchWork(url.href, obj);
 }
 
-module.exports = fetch;
+module.exports = fetchMethod;
