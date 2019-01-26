@@ -1,0 +1,15 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "cSpell.language": "en",
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "fileheader.Author": "Rahul Rana",
+  "fileheader.LastModifiedBy": "Rahul Rana",
+  "fileheader.tpl": "/* * @Author: {author}  * @Date: {createTime}>sett  */",
+  "window.zoomLevel": 1
+}
