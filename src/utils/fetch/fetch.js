@@ -1,3 +1,4 @@
+const wfetch = require("whatwg-fetch");
 /**
  *
  * @param {Object} obj object
@@ -17,7 +18,11 @@ const Fetch = {
 };
 
 function fetch(obj) {
-  const url = new URL(obj.url);
+  if (!obj.url) {
+    return {};
+  }
+
+  const url = new window.URL(obj.url);
   obj.body = JSON.stringify(obj.body);
   let query = {};
 
@@ -42,16 +47,15 @@ function fetch(obj) {
     obj.headers
   );
 
-  return fetch(url.href, obj)
-    .then(function(response) {
-      return response.json();
-    })
-    .catch(err => {
-      return {
-        error: true,
-        message: err
-      };
-    });
+  let fetchWork = "";
+
+  if (fetch) {
+    fetchWork = fetch;
+  } else {
+    fetchWork = wfetch.fetch;
+  }
+
+  return fetchWork(url.href, obj);
 }
 
 module.exports = fetch;
