@@ -1,2 +1,2 @@
 var fetch = require("./fetch");
-export default fetch;
+module.exports = fetch;

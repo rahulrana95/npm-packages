@@ -54,4 +54,4 @@ function fetch(obj) {
     });
 }
 
-export default fetch;
+module.exports = fetch;
